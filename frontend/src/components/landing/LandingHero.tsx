@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { ArrowRight, Sparkles, Clock, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 

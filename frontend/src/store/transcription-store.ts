@@ -30,7 +30,7 @@ type TranscriptionStore = TranscriptionState & TranscriptionActions;
 
 export const useTranscriptionStore = create<TranscriptionStore>()(
   devtools(
-    (set, get) => ({
+    (set) => ({
       // Initial state
       currentTranscription: null,
       changes: [],

@@ -39,7 +39,6 @@ export function ProjectCard({ project, onProjectClick, onUpdateProject, onDelete
 
   // Build full URLs using the utility function
   const videoUrl = project.videoUrl ? buildMediaUrl(project.videoUrl) : undefined;
-  const thumbnailUrl = project.thumbnailUrl ? buildMediaUrl(project.thumbnailUrl) : undefined;
 
   const handleSaveEdit = async () => {
     if (editTitle.trim() && editTitle !== project.title) {

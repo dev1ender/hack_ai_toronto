@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Project } from '@/types/project';
-import { buildMediaUrl, buildMediaUrlWithCacheBuster } from '@/lib/utils';
+import { buildMediaUrlWithCacheBuster } from '@/lib/utils';
 import { RefreshCw, Play, Pause, Volume2 } from 'lucide-react';
 
 interface VideoPlayerProps {
@@ -11,7 +11,7 @@ interface VideoPlayerProps {
 
 export function VideoPlayer({ selectedProject }: VideoPlayerProps) {
   const [videoKey, setVideoKey] = useState<string>('');
-  const [lastUpdatedAt, setLastUpdatedAt] = useState<string>('');
+
   const [cacheBuster, setCacheBuster] = useState<number>(Date.now());
   
   // Video player state
@@ -40,7 +40,6 @@ export function VideoPlayer({ selectedProject }: VideoPlayerProps) {
       
       const newVideoKey = `${selectedProject.id}-${selectedProject.updatedAt}-${timestamp}`;
       setVideoKey(newVideoKey);
-      setLastUpdatedAt(selectedProject.updatedAt);
       setCacheBuster(timestamp);
       
       // Reset player state when project changes

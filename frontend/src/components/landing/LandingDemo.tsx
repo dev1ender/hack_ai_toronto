@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Play, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 

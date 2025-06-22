@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
@@ -9,7 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Plus, Search, Filter, FolderOpen, Grid3X3, List, AlertCircle, Loader2, RefreshCw } from 'lucide-react';
+import { Plus, Search, Filter, FolderOpen, AlertCircle, Loader2 } from 'lucide-react';
 import { ProjectResponse } from '@/types/project';
 import { ProjectCard } from '@/components/ProjectCard';
 import { CreateProjectModal } from '@/components/CreateProjectModal';
@@ -23,7 +23,7 @@ interface ProjectsPageProps {
 export function ProjectsPage({ onProjectSelect }: ProjectsPageProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [viewMode] = useState<'grid' | 'list'>('grid');
   const [showCreateModal, setShowCreateModal] = useState(false);
   
   const {
@@ -79,10 +79,6 @@ export function ProjectsPage({ onProjectSelect }: ProjectsPageProps) {
 
   const handlePageChange = (page: number) => {
     fetchProjects(page, filters);
-  };
-
-  const handleRefresh = () => {
-    fetchProjects(currentPage, filters);
   };
 
   const getStatusCount = (status: string) => {

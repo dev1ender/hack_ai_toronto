@@ -1,4 +1,4 @@
-import type { ApiResponse, ApiError, UploadProgress } from '@/types';
+import type { ApiResponse, UploadProgress } from '@/types';
 import { config } from '@/lib/config';
 
 interface RequestOptions extends RequestInit {
@@ -22,9 +22,7 @@ class ApiClient {
     return localStorage.getItem('auth_token');
   }
 
-  private setAuthToken(token: string): void {
-    localStorage.setItem('auth_token', token);
-  }
+
 
   private removeAuthToken(): void {
     localStorage.removeItem('auth_token');

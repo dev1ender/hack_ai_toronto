@@ -1,5 +1,4 @@
-import React from 'react';
-import { Settings, Bell, HelpCircle, CheckCircle2, Zap, LogOut } from 'lucide-react';
+import { LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,

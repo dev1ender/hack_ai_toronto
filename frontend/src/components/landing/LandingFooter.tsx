@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { SewingNeedleIcon } from '@/components/icons/SewingNeedleIcon';
 
 interface LandingFooterProps {
