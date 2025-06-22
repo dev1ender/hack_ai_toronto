@@ -1,0 +1,15 @@
+**/venv/**
+**/inspiration/**
+
+**/outputs/**
+**/temp/**
+**/uploads/**
+
+**/__pycache__/**
+**/seed_data/**
+**/*.pyc
+
+**/*.log
+**/thumbnails/**
+.env
+resources/**
