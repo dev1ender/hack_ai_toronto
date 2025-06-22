@@ -21,3 +21,4 @@ alembic
 passlib[bcrypt]
 python-jose[cryptography]
 rich
+email-validator

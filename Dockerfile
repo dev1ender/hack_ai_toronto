@@ -15,6 +15,10 @@ COPY src/ /app/src
 # We need this to run alembic
 COPY alembic.ini /app/alembic.ini
 
-ENV PYTHONPATH=/app
+# Set PYTHONPATH to include the src directory
+ENV PYTHONPATH=/app/src
 
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"] 
+# Change working directory to src so imports work correctly
+WORKDIR /app/src
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"] 
